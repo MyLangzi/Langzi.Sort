@@ -46,6 +46,17 @@ namespace Langzi.Sort
                 }
             }
         }
+        /// <summary>
+        /// 选择排序
+        /// </summary>
+        /// <param name="arr"></param>
+        public static void SelectionSort(this int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+                for (int j = i + 1; j < arr.Length - 1; j++)
+                    if (arr[i] > arr[j])
+                        Swap(ref arr[i], ref arr[j]);
+        }
 
     }
 }

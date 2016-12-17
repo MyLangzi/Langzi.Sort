@@ -11,7 +11,7 @@ namespace Langzi.Sort
         {
             int[] arr = { 1, -3, 43, 453, 2, 4, 54 };
 
-            arr.BubbleSort_Efficient();
+            arr.SelectionSort();
             Print(arr);
 
 
