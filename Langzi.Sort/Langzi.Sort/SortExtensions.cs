@@ -1,7 +1,7 @@
 ﻿
 namespace Langzi.Sort
 {
-    public  static class SortExtensions
+    public static class SortExtensions
     {
         /// <summary>
         /// 交换两个数值
@@ -53,10 +53,27 @@ namespace Langzi.Sort
         public static void SelectionSort(this int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
-                for (int j = i + 1; j < arr.Length - 1; j++)
+                for (int j = i + 1; j < arr.Length; j++)
                     if (arr[i] > arr[j])
                         Swap(ref arr[i], ref arr[j]);
         }
+        /// <summary>
+        /// 选择排序优化
+        /// </summary>
+        /// <param name="arr"></param>
+        public static void SelectionSort_Efficlient(this int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < arr.Length; j++)
+                    if (arr[minIndex] > arr[j])
+                        minIndex = j;
+                if (i != minIndex)
+                    Swap(ref arr[i], ref arr[minIndex]);
+            }
+        }
+
 
     }
 }
